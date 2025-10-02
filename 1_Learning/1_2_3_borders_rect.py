@@ -42,15 +42,18 @@ while running:
     if keys[pygame.K_a]:
         player_pos.x -= SPEED * dt
     if keys[pygame.K_d]:
-        player_pos.x += SPEED * dta
+        player_pos.x += SPEED * dt
     
     player_rect.center = player_pos
     player_rect.clamp_ip(screen_rect)        # in-place clamp to screen, so if any part of the player rect is not inside screen rect, it moves it so it is
     player_pos.update(player_rect.center) #and thus if clamping did take place, this updates the player position to the corrected clamped movement
     #note instead of redefining the variable, we can just update it every time
     
+    
+    
     screen.fill("purple") #common to put the draws together at the end
     pygame.draw.circle(screen, "red", player_pos, R) #we can put the draw at the end so we are always inline with game time instead of a tick behind    
+    
     pygame.display.flip() #flip is part of draw operations
     
     dt = clock.tick(60) / 1000
