@@ -24,12 +24,12 @@ player_rect.center = player_pos
 ## wall definitions
 wall1_rect = pygame.Rect((screen.get_width() / 2) + 300, (screen.get_height() / 2) - 150, 40, 300)
 wall2_rect = pygame.Rect((screen.get_width() / 2) - 300, (screen.get_height() / 2) - 100, 100, 200)
-left_border_rect = pygame.Rect(-1,0,1,h)
-right_border_rect = pygame.Rect(w,0,1,h)
-top_border_rect = pygame.Rect(0,-1,w,1)
+left_border_rect = pygame.Rect(-1,0,1,h) # note the minus 1 values as this basically puts our walls off screen
+right_border_rect = pygame.Rect(w,0,1,h) # if we wanted different types of walls, we might make a dictionary or list of lists 
+top_border_rect = pygame.Rect(0,-1,w,1) # then we can put other properties to iterate through later (colour, behaviour, etc.)
 bot_border_rect = pygame.Rect(0,h,w,1)
 
-wall_list = [wall1_rect, wall2_rect, #put all the walls in a list which we can then iterate through later
+wall_list = [wall1_rect, wall2_rect, # for now we put all the wall rects in a list for iteration
              left_border_rect, right_border_rect, 
              top_border_rect, bot_border_rect] 
 
